@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mma Cover Tracker</title>
+    <!-- We will link CSS here tomorrow -->
+</head>
+<body>
+
+    <!-- Main Header -->
+    <header>
+        <h1>Mixo's Societ Tracker</h1>
+        <p id="current-month">September 2026</p>
+    </header>
+
+    <!-- Overview Status Card (Traffic Light System) -->
+    <section id="status-overview">
+        <div class="status-circle status-urgent"></div>
+        <h2>Action Required</h2>
+        <p>You have <strong>3</strong> payments due this week.</p>
+    </section>
+
+    <!-- The List of Societies -->
+    <main id="societies-list">
+        
+        <!-- Example of a single Society Card -->
+        <article class="society-card unpaid">
+            <div class="card-info">
+                <h3>Khanya Funeral Parlour</h3>
+                <p class="amount">R 250.00</p>
+                <p class="due-date">Due: 25th Sept</p>
+            </div>
+            <!-- Large tap target button for Mom -->
+            <button class="pay-btn">Mark as Paid</button>
+        </article>
+
+        <!-- Dynamic cards from Node.js will be injected here later -->
+
+    </main>
+
+</body>
+</html>
