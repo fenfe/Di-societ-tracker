@@ -1,0 +1,47 @@
+{
+    "_id": "soc_01",
+    "name": "Societ sa Family",
+    "category": "Burial Society",
+    "paymentMethod": "cash",
+    "whoPaid": "i payed at meeting or someone paid for me",
+    "schedule": {
+        "type": "relative_day",
+        "rule": "1st sunday of every month",
+        "dayOfMonth": null
+    },
+    "financials": {
+        "monthlyContribution": 100,
+        "latePernaltyPerMonth": 5,
+        "annualFee": {
+            "name": "Matiki",
+            "amount": 0,
+            "isPaidForCurrentYear": true
+        }
+    },
+    "accountState": {
+        "status": "paid",
+        "monthsPaidAhead": 0,
+        "missedMonthCount": 0,
+        "penaltyBalance": 0,
+        "totalContributedThisFar": 1100,
+        "lastPaidMonth": "2026-11"
+    },
+    "policyRules": {
+        "maxMissedMonthsBeforeLapse": 6,
+        "payoutType": "cash",
+        "mainMemberPayout": 15000,
+        "subMemberPayout": 5000,
+        "rules": [
+            "can send contributions via someone else without attending.",
+            "6 consecutive missed months results in termination without payout"
+        ]
+    },
+    "submembers": [
+     {
+        "name": "Example Dependant",
+        "relationship": "child",
+        "status": "active",
+        "claimedDate": null
+    }
+]
+}
