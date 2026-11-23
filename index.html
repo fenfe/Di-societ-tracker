@@ -4,40 +4,174 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mma Cover Tracker</title>
+    <link rel="stylesheet" href="style.css">
     <!-- We will link CSS here tomorrow -->
 </head>
 <body>
 
     <!-- Main Header -->
     <header>
-        <h1>Mixo's Societ Tracker</h1>
-        <p id="current-month">September 2026</p>
-    </header>
+        <img src="./images/logo5.png" alt="Restaurant Logo" class="nav-logo">
+          
+        <!-- tabs links for easy fast access -->
+        <nav>
+           <button id="all-socials">ALL</button>
+           <button id="overdue">OverDue</button>
+           <button id="advanced">Advanced</button>
+        </nav>
+   </header>
 
-    <!-- Overview Status Card (Traffic Light System) -->
-    <section id="status-overview">
-        <div class="status-circle status-urgent"></div>
-        <h2>Action Required</h2>
-        <p>You have <strong>3</strong> payments due this week.</p>
-    </section>
 
     <!-- The List of Societies -->
     <main id="societies-list">
-        
-        <!-- Example of a single Society Card -->
-        <article class="society-card unpaid">
-            <div class="card-info">
-                <h3>Khanya Funeral Parlour</h3>
-                <p class="amount">R 250.00</p>
-                <p class="due-date">Due: 25th Sept</p>
-            </div>
-            <!-- Large tap target button for Mom -->
-            <button class="pay-btn">Mark as Paid</button>
-        </article>
+        <!-- Overall money for all societies -->
+        <div class="societies-overAllMonthly">
+            <h1>All My Societies Contributions</h1>
+            <span>R 980.00</span> / month
+        </div>
+        <!-- List of all the societies with details -->
+        <section class="all-societies">
+            <article class="societ-card">
+                <h2>Societe sa di 05</h2>
+                
+                <p class="date">Due : 05 Every month</p>
+                <p class="amount-monthly-contr">
+                  <data value="50.00">R 50.00</data>
+                </p>
+                <p class="amount-matiki">
+                    <data value="24.00">R 24.00</data> Matiki  / year
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button" command="show-modal" commandfor="my-dialog">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
 
-        <!-- Dynamic cards from Node.js will be injected here later -->
+              <article class="societ-card">
+                <h2>Societe sa di 09</h2>
+                
+                <p class="date">Due : 09 Every month</p>
+                <p class="amount-monthly-contr">
+                  <data value="50.00">R 50.00</data>
+                </p>
+                <p class="amount-matiki">
+                    <data value="24.00">R 24.00</data> Matiki  / year
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
 
+              <article class="societ-card">
+                <h2>Societe sa Grocery</h2>
+                
+                <p class="date">Due : Every 2nd Saturday every month</p>
+                <p class="amount">
+                  <data value="50.00">R 40.00</data>
+                </p>
+                <p class="amount-matiki">
+                    <data value="24.00">R 24.00</data> Matiki  / year
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
+
+              <article class="societ-card">
+                <h2>Societe sa Family</h2>
+                
+                <p class="date">Due : Every 1st sunday month</p>
+                <p class="amount">
+                  <data value="50.00">R 100.00</data>
+                </p>
+               
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
+
+              <article class="societ-card">
+                <h2>Mashankura Thage</h2>
+                
+                <p class="date">Due : Anytime Every month</p>
+                <p class="amount">
+                  <data value="50.00">R 200.00</data>
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
+
+              <article class="societ-card">
+                <h2>Motsisi Funeral Parlour</h2>
+                
+                <p class="date"> Due : Every month</p>
+                <p class="amount">
+                  <data value="50.00">R 350.00</data>
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
+              
+              <article class="societ-card">
+                <h2>Econo Funeral Parlour</h2>
+                
+                <p class="date"> Due : Every month</p>
+                <p class="amount">
+                  <data value="50.00">R 315.00</data>
+                </p>
+              
+                <div class="card-btns">
+                  <button type="button">Pay Now</button>
+                  <button type="button">View History</button>
+                </div>
+              </article>
+        </section>
     </main>
+
+    <!-- Modal for Pay Button -->
+    <button command="show-modal" commandfor="my-dialog">Open Modal</button>
+    <dialog id="my-dialog">
+        <form action="">
+        <p>This is my modal</p>
+        <div class="cardBtns"> Months to Pay
+            <button class="minus" data-name="" data-price="">-</button>
+            <span class="months">1</span>
+            <button class="plus" data-name="" data-price="">+</button>
+        </div>
+
+<label>
+  <input type="checkbox" name="fine" value="yes" >
+  Fine included?
+</label><br>
+
+<p>Remaining Matiki :<span> R 18.00</span></p>
+<label for="add-matiki">
+    Add Matiki?
+<input type="number" name="matiki" value="" >
+</label><br>
+<label for="add-matiki">
+    Who Paid?
+<input type="text" name="matiki" value="" >
+</label>
+<p>Advanced Months Paid : <span>3 months </span></p>
+<p>Total : R 126.00</p>
+        
+    </form>
+    <button command="close" commandfor="my-dialog">Pay</button>
+    </dialog>
 
 </body>
 </html>
