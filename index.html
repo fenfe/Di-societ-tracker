@@ -11,7 +11,7 @@
 
     <!-- Main Header -->
     <header>
-        <img src="./images/logo5.png" alt="Restaurant Logo" class="nav-logo">
+        <img src="./images/logo5.png" alt="Mama society tracker Logo" class="nav-logo">
           
         <!-- tabs links for easy fast access -->
         <nav>
@@ -31,11 +31,11 @@
         </div>
         <!-- List of all the societies with details -->
         <section class="all-societies">
-            <article class="societ-card">
+            <article class="societ-card" >
                 <h2>Societe sa di 05</h2>
                 
                 <p class="date">Due : 05 Every month</p>
-                <p class="amount-monthly-contr">
+                <p class="monthly-contribution">
                   <data value="50.00">R 50.00</data>
                 </p>
                 <p class="amount-matiki">
@@ -43,8 +43,8 @@
                 </p>
               
                 <div class="card-btns">
-                  <button type="button" command="show-modal" commandfor="my-dialog">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button type="button" command="show-modal" commandfor="pay-dialog" id="soc-05">Pay Now</button>
+                  <button type="button" command="show-modal" commandfor="history-dialog">View History</button>
                 </div>
               </article>
 
@@ -52,7 +52,7 @@
                 <h2>Societe sa di 09</h2>
                 
                 <p class="date">Due : 09 Every month</p>
-                <p class="amount-monthly-contr">
+                <p class="monthly-contribution">
                   <data value="50.00">R 50.00</data>
                 </p>
                 <p class="amount-matiki">
@@ -69,8 +69,8 @@
                 <h2>Societe sa Grocery</h2>
                 
                 <p class="date">Due : Every 2nd Saturday every month</p>
-                <p class="amount">
-                  <data value="50.00">R 40.00</data>
+                <p class="monthly-contribution">
+                  <data value="40.00">R 40.00</data>
                 </p>
                 <p class="amount-matiki">
                     <data value="24.00">R 24.00</data> Matiki  / year
@@ -86,8 +86,8 @@
                 <h2>Societe sa Family</h2>
                 
                 <p class="date">Due : Every 1st sunday month</p>
-                <p class="amount">
-                  <data value="50.00">R 100.00</data>
+                <p class="monthly-contribution">
+                  <data value="100.00">R 100.00</data>
                 </p>
                
               
@@ -101,8 +101,8 @@
                 <h2>Mashankura Thage</h2>
                 
                 <p class="date">Due : Anytime Every month</p>
-                <p class="amount">
-                  <data value="50.00">R 200.00</data>
+                <p class="monthly-contribution">
+                  <data value="200.00">R 200.00</data>
                 </p>
               
                 <div class="card-btns">
@@ -115,8 +115,8 @@
                 <h2>Motsisi Funeral Parlour</h2>
                 
                 <p class="date"> Due : Every month</p>
-                <p class="amount">
-                  <data value="50.00">R 350.00</data>
+                <p class="monthly-contribution">
+                  <data value="350.00">R 350.00</data>
                 </p>
               
                 <div class="card-btns">
@@ -129,8 +129,8 @@
                 <h2>Econo Funeral Parlour</h2>
                 
                 <p class="date"> Due : Every month</p>
-                <p class="amount">
-                  <data value="50.00">R 315.00</data>
+                <p class="monthly-contribution">
+                  <data value="315.00">R 315.00</data>
                 </p>
               
                 <div class="card-btns">
@@ -142,14 +142,14 @@
     </main>
 
     <!-- Modal for Pay Button -->
-    <button command="show-modal" commandfor="my-dialog">Open Modal</button>
-    <dialog id="my-dialog">
+    <dialog id="pay-dialog">
         <form action="">
-        <p>This is my modal</p>
+        <p>Societe sa di 05</p>
+        <button type="button" command="close" commandfor="pay-dialog" aria-label="close">X</button>
         <div class="cardBtns"> Months to Pay
-            <button class="minus" data-name="" data-price="">-</button>
+            <button type="button" class="minus" data-name="" data-price="">-</button>
             <span class="months">1</span>
-            <button class="plus" data-name="" data-price="">+</button>
+            <button type="button" class="plus" data-name="" data-price="">+</button>
         </div>
 
 <label>
@@ -160,18 +160,59 @@
 <p>Remaining Matiki :<span> R 18.00</span></p>
 <label for="add-matiki">
     Add Matiki?
-<input type="number" name="matiki" value="" >
+<input type="number" name="add-matiki" value="" >
 </label><br>
-<label for="add-matiki">
+<label for="who-paid">
     Who Paid?
-<input type="text" name="matiki" value="" >
+<input type="text" name="who-paid" value="" >
 </label>
 <p>Advanced Months Paid : <span>3 months </span></p>
 <p>Total : R 126.00</p>
-        
+        <button type="button" command="close" commandfor="pay-dialog">Pay</button>
     </form>
-    <button command="close" commandfor="my-dialog">Pay</button>
+    
     </dialog>
+
+     <!-- Modal for view history Button -->
+     <dialog id="history-dialog">
+      <header class="modal-header">
+        <h2 id="history-society-name">Societe sa di 05 - History</h2>
+        <button type="button" command="close" commandfor="history-dialog" aria-label="close">X</button>
+      </header>
+
+      <div class="modal-body">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th scope="col">Date Paid</th>
+              <th scope="col">Months Covered</th>
+              <th scope="col">Extras</th>
+              <th scope="col">Total Paid</th>
+              <th scope="col">Paid By</th>
+            </tr>
+          </thead>
+
+          <tbody id="hstory-table-body">
+            <tr>
+              <td><time datetime="2026-10-04">04 Oct 2026</time></td>
+              <td>Oct 2026 (1 mo)</td>
+              <td>Matiki : R 24.00</td>
+              <td><data value="74.00">R 74.00</data></td>
+              <td>Mma</td>
+            </tr>
+
+            <tr>
+              <td><time datetime="2026-09-05">05 Sep 2026</time></td>
+              <td>Sep 2026 (1 mo)</td>
+              <td>None</td>
+              <td><data value="50.00"></data></td>
+              <td>Mamaiza</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- <button command="close" commandfor="history-dialog">Close</button> -->
+     </dialog>
 
 </body>
 </html>
