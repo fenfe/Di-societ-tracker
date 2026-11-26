@@ -152,42 +152,61 @@
     </main>
 
     <!-- Modal for Pay Button -->
-    <dialog id="pay-dialog">
-        <form action="">
-        <p>Societe sa di 05</p>
-        <button type="button" command="close" commandfor="pay-dialog" aria-label="close">X</button>
-        <div class="cardBtns"> Months to Pay
-            <button type="button" class="minus" data-name="" data-price="">-</button>
-            <span class="months">1</span>
-            <button type="button" class="plus" data-name="" data-price="">+</button>
-        </div>
-
-<label>
-  <input type="checkbox" name="fine" value="yes" >
-  Fine included?
-</label><br>
-
-<p>Remaining Matiki :<span> R 18.00</span></p>
-<label for="add-matiki">
-    Add Matiki?
-<input type="number" name="add-matiki" value="" >
-</label><br>
-<label for="who-paid">
-    Who Paid?
-<input type="text" name="who-paid" value="" >
-</label>
-<p>Advanced Months Paid : <span>3 months </span></p>
-<p>Total : R 126.00</p>
-        <button type="button" command="close" commandfor="pay-dialog">Pay</button>
-    </form>
+    <dialog class="modal" id="pay-dialog">
+      <div class="modal-header">
+        <h2>Societe sa di 05</h2>
+        <button class="modal-close-btn" type="button" command="close" commandfor="pay-dialog" aria-label="close">✕</button>
+      </div>
     
+      <form class="pay-form" action="">
+        <!-- Stepper Row -->
+        <div class="form-row stepper-row">
+          <span>Months to Pay</span>
+          <div class="cardBtns">
+            <button type="button" class="minus stepper-btn" aria-label="Decrease months">−</button>
+            <span class="months">1</span>
+            <button type="button" class="plus stepper-btn" aria-label="Increase months">+</button>
+          </div>
+        </div>
+    
+        <!-- Checkbox Row -->
+        <label class="checkbox-row">
+          <input type="checkbox" name="fine" value="yes">
+          <span>Fine included?</span>
+        </label>
+    
+        <!-- Matiki Info & Input -->
+        <div class="info-box">
+          <p>Remaining Matiki: <strong>R 18.00</strong></p>
+          <p>Advanced Months Paid: <strong>3 months</strong></p>
+        </div>
+    
+        <div class="input-group">
+          <label for="add-matiki">Add Matiki (R)</label>
+          <input type="number" id="add-matiki" name="add-matiki" placeholder="0.00">
+        </div>
+    
+        <div class="input-group">
+          <label for="who-paid">Who Paid?</label>
+          <input type="text" id="who-paid" name="who-paid" placeholder="e.g. Mma">
+        </div>
+    
+        <!-- Total & Submit -->
+        <div class="total-bar">
+          <span>Total to Pay</span>
+          <strong class="total-amount">R 126.00</strong>
+        </div>
+    
+        <button type="button" class="submit-pay-btn" command="close" commandfor="pay-dialog">Confirm Payment</button>
+      </form>
     </dialog>
+    
 
      <!-- Modal for view history Button -->
-     <dialog id="history-dialog">
+     <dialog class="modal history-modal" id="history-dialog">
       <header class="modal-header">
         <h2 id="history-society-name">Societe sa di 05 - History</h2>
-        <button type="button" command="close" commandfor="history-dialog" aria-label="close">X</button>
+        <button class="modal-close-btn" type="button" command="close" commandfor="history-dialog" aria-label="close">X</button>
       </header>
 
       <div class="modal-body">
@@ -208,21 +227,21 @@
               <td>Oct 2026 (1 mo)</td>
               <td>Matiki : R 24.00</td>
               <td><data value="74.00">R 74.00</data></td>
-              <td>Mma</td>
+              <td>Mamiki</td>
             </tr>
 
             <tr>
               <td><time datetime="2026-09-05">05 Sep 2026</time></td>
               <td>Sep 2026 (1 mo)</td>
               <td>None</td>
-              <td><data value="50.00"></data></td>
+              <td><data value="50.00">R 50.00</data></td>
               <td>Mamaiza</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <!-- <button command="close" commandfor="history-dialog">Close</button> -->
-     </dialog>
+</dialog>
+    
 
 </body>
 </html>
