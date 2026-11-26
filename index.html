@@ -5,84 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mma Cover Tracker</title>
     <link rel="stylesheet" href="style.css">
-    <!-- We will link CSS here tomorrow -->
+    
+     <!-- External sources for icons & fonts -->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://googleapis.com" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
 
-    <!-- Main Header -->
-    <header>
-        <img src="./images/logo5.png" alt="Mama society tracker Logo" class="nav-logo">
+    <!-- FIXED TOP NAVIGATION BAR -->
+    <nav class="top-navbar">
+      <div class="nav-container">
+        <img src="./images/logo1.jpg" alt="Mama society tracker Logo" class="nav-logo">
+        <span class="nav-heading">Di-Societe</span>
           
         <!-- tabs links for easy fast access -->
-        <nav>
-           <button id="all-socials">ALL</button>
-           <button id="overdue">OverDue</button>
-           <button id="advanced">Advanced</button>
-        </nav>
-   </header>
+        <div class="nav-links">
+           <a id="all-socials" href="#" >All</a>
+           <a  id="overdue" href="#" >OverDue</a>
+           <a id="advanced" href="#">Advanced</a>
+        </div>
+          </div>
+      </nav>
 
 
     <!-- The List of Societies -->
     <main id="societies-list">
         <!-- Overall money for all societies -->
-        <div class="societies-overAllMonthly">
-            <h1>All My Societies Contributions</h1>
-            <span>R 980.00</span> / month
+        <div class="soc-overAllMonthly">
+            <h1>My Contributions <span>( 7 )</span></h1>
+            <span class="amount">R 980.00</span> / month
         </div>
         <!-- List of all the societies with details -->
-        <section class="all-societies">
-            <article class="societ-card" >
+        <section class="all-soc">
+            <article class="soc-card" >
                 <h2>Societe sa di 05</h2>
                 
                 <p class="date">Due : 05 Every month</p>
                 <p class="monthly-contribution">
                   <data value="50.00">R 50.00</data>
                 </p>
-                <p class="amount-matiki">
+                <p class="amount-matiki monthly-contribution">
                     <data value="24.00">R 24.00</data> Matiki  / year
                 </p>
               
                 <div class="card-btns">
-                  <button type="button" command="show-modal" commandfor="pay-dialog" id="soc-05">Pay Now</button>
-                  <button type="button" command="show-modal" commandfor="history-dialog">View History</button>
+                  <button class="card-btn" type="button" command="show-modal" commandfor="pay-dialog" id="soc-05">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button" command="show-modal" commandfor="history-dialog">View History</button>
                 </div>
               </article>
 
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Societe sa di 09</h2>
                 
                 <p class="date">Due : 09 Every month</p>
                 <p class="monthly-contribution">
                   <data value="50.00">R 50.00</data>
                 </p>
-                <p class="amount-matiki">
+                <p class="amount-matiki monthly-contribution">
                     <data value="24.00">R 24.00</data> Matiki  / year
                 </p>
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
 
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Societe sa Grocery</h2>
                 
                 <p class="date">Due : Every 2nd Saturday every month</p>
                 <p class="monthly-contribution">
                   <data value="40.00">R 40.00</data>
                 </p>
-                <p class="amount-matiki">
+                <p class="amount-matiki monthly-contribution">
                     <data value="24.00">R 24.00</data> Matiki  / year
                 </p>
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
 
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Societe sa Family</h2>
                 
                 <p class="date">Due : Every 1st sunday month</p>
@@ -92,12 +102,12 @@
                
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
 
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Mashankura Thage</h2>
                 
                 <p class="date">Due : Anytime Every month</p>
@@ -106,12 +116,12 @@
                 </p>
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
 
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Motsisi Funeral Parlour</h2>
                 
                 <p class="date"> Due : Every month</p>
@@ -120,12 +130,12 @@
                 </p>
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
               
-              <article class="societ-card">
+              <article class="soc-card">
                 <h2>Econo Funeral Parlour</h2>
                 
                 <p class="date"> Due : Every month</p>
@@ -134,8 +144,8 @@
                 </p>
               
                 <div class="card-btns">
-                  <button type="button">Pay Now</button>
-                  <button type="button">View History</button>
+                  <button class="card-btn" type="button">Pay Now</button>
+                  <button class="card-btn btn-outline" type="button">View History</button>
                 </div>
               </article>
         </section>

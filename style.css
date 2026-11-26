@@ -1,4 +1,146 @@
-.societ-card{
-    border: 1px solid red;
-    margin-bottom: 16px;
+/* Css color Variables */
+:root {
+    --green : #1B4332;
+    --warm-gold : #D97706 ;
+    --off-white : #F8F9FA;
+}
+/* Green = (#1B4332) or Emerald (#2D6A4F)  */
+/* Warm Gold / Ochre = (#D97706 or #E9C46A) */
+/* Off-White / Cream = (#F8F9FA): */
+
+/* ==========================================================================
+   BASE MOBILE-FIRST STYLES (Applies to all devices, starting at small screens)
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    padding: 1.6rem 1.25rem 2.5rem 1.25rem;
+   }
+
+   /* Responsive layout wrapper */
+
+   /* ==========================================================================
+   THE SCROLL-UNDERNEATH STICKY HEADER EFFECT
+   ========================================================================== */
+.top-navbar {
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 80px; */
+    z-index: 1000;
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--green);
+    background-color: rgba(248, 249, 250, 0.85)
+}
+.nav-container {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+}
+.nav-links a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    padding: 10px 14px;
+}
+
+.nav-links a:hover { 
+    color: var(--warm-gold); 
+}
+   .nav-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    mix-blend-mode: multiply;
+   }
+
+   main {
+    margin-top: 8rem;
+   }
+   .nav-heading {
+    color: var(--warm-gold);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    text-align: center;
+   }
+   /* MAIN STYLING */
+   h1 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 24px;
+    /* border: 1px solid blue; */
+   }
+
+   .soc-overAllMonthly {
+    padding: 16px 0 16px 8px;
+   }
+   .amount {
+    font-size: 36px;
+    font-weight: 700;
+    /* border: 1px solid blue; */
+
+   }
+   .all-soc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  margin-top: 16px;
+   }
+  
+   .soc-card {
+    padding: 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+   }
+   h2 {
+    font-size: 20px;
+    padding: 8px 0;
+    color: var(--green);    
+   }
+   .card-btns {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+   }
+   .card-btn {
+    padding: 8px 24px;
+    border: none;
+    background-color: var(--warm-gold);
+    border-radius: 4px;
+    color: var(--off-white);
+    font-family: 'Outfit';
+    font-size: 1rem;
+    min-height: 32px;
+    letter-spacing: .5px;
+}
+.btn-outline {
+    background-color: var(--off-white);
+    color: black;
+    border: 1.5px solid var(--warm-gold);
+}
+.monthly-contribution > data {
+    font-weight: 600;
 }
